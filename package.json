@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build-armhf" : "docker build -f Dockerfile.armhf -t abstractalchemist/app2:armhf .",
+      "build-x86_64" : "docker build -f Dockerfile.x86:64 -t abstractalchemist/app2:latest ."
   },
   "author": "",
   "license": "ISC",
