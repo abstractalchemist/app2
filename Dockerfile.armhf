@@ -1,0 +1,3 @@
+FROM werwolfby/armhf-alpine-nginx
+ADD public /app/content
+ADD dist /app/content
