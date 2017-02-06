@@ -1,0 +1,21 @@
+#!/bin/bash
+
+LAST_RUN_FILE=./.last-deployed
+
+pushd /home/pirate/workspace/app2
+
+if [[ -e $LAST_RUN_FILE ]];
+then
+    GIT_ID=$( cat $LAST_RUN_FILE )
+    CURRENT_GIT=$(git log -n1 --format=%h)
+    if [[ $GIT_ID -eq $CURRENT_GIT ]];
+    then
+	echo on current
+    else
+	echo need update
+    fi
+else
+    git log -n1 --format=%h > $LAST_RUN_FILE
+fi
+
+popd
